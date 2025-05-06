@@ -1,23 +1,17 @@
 const express=require('express')
 const app=express()
-const router=express.Router()
+ const router=express.Router()
+const {MovieIndex, movieCreate, movieUpdate, movieDelete}=require('../controller/movieContoller')
+//import {MovieIndex} from('../controller/movieContoller')
 
 
 
-router.get('/',(req,res)=>{
-    res.send('get all movies')
-})
+router.get('/',MovieIndex)
+    
+router.post('/',movieCreate)
 
-router.post('/',(req,res)=>{
-    res.send('post a movie')
-})
+router.put('/:id',movieUpdate)
 
-router.put('/',(req,res)=>{
-    res.send('update a movie')
-})
-
-router.delete('/',(req,res)=>{
-    res.send('delete a movie')
-}) 
+router.delete('/:id',movieDelete) 
 
 module.exports=router
