@@ -5,14 +5,7 @@ app.get('/',(req,res)=>{
     res.send('Hello World')
 })
 
-app.get('/movies',(req,res)=>{})
-
-app.post('/movies',(req,res)=>{})
-
-app.put('/movies',(req,res)=>{})
-
-app.delete('/movies',(req,res)=>{})
-
+app.use('/movies',require('./routes/movie'))
 
 
 app.listen(port,()=>console.log(`Example app listening on port ${port}!`))
