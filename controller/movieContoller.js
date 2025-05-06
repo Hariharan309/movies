@@ -5,7 +5,9 @@
 
     
   const movieCreate=(req,res)=>{
-    res.send('create a movie')
+    console.log(req.body)
+    return res.json(req.body)
+    //res.send('create a movie')
 }
 
 const movieUpdate=(req,res)=>{

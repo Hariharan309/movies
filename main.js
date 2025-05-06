@@ -8,6 +8,8 @@ app.get('/',(req,res)=>{
 
 app.use('/movies',require('./routes/movie'))
 
+app.use(express.json())
+
 
 connectdb()
 
